@@ -16,7 +16,6 @@
     "baseUrl": ".",
     "paths": {
       "@lha-labs/theme": ["libs/theme/src/index.ts"],
-      "@lha-labs/theme/server": ["libs/theme/src/server.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
