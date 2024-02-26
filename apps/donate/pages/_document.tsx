@@ -12,7 +12,7 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@100..900&display=swap"
             rel="stylesheet"
           />
-          <link rel="icon" type="image/x-icon" href="/favicon.png" />
+          <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         </Head>
         <body>
           <Main />
