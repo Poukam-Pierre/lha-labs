@@ -1,1 +1,3 @@
-export const website = {};
+export const website = {
+  Hello: 'World',
+};

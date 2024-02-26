@@ -1,12 +1,26 @@
-import { Typography } from '@mui/material';
+import { useLanguage } from '@lha-labs/theme';
+import { Box, Button, Typography } from '@mui/material';
+import { useIntl } from 'react-intl';
 
 export function Index() {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./index.css file.
-   */
-  return <Typography> {"Welcome To LHA-Labs' Donate project"}</Typography>;
+  const { formatMessage } = useIntl();
+  const { activeLanguage, languageDispatch } = useLanguage();
+  return (
+    <Box>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() =>
+          languageDispatch({
+            type: activeLanguage === 'en' ? 'USE_FRENCH' : 'USE_ENGLISH',
+          })
+        }
+      >
+        Change Language: {activeLanguage}
+      </Button>
+      <Typography variant="h1"> {formatMessage({ id: 'Hello' })}</Typography>
+    </Box>
+  );
 }
 
 export default Index;
