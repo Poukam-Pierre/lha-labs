@@ -5,11 +5,22 @@
   "scripts": {},
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@iconify/icons-fluent": "^1.2.38",
+    "@iconify/react": "^4.1.1",
+    "@mui/material": "^5.15.11",
     "@nx/next": "17.2.8",
+    "axios": "^1.6.7",
+    "formik": "^2.4.5",
     "next": "13.4.4",
+    "rc-scrollbars": "^1.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tslib": "^2.3.0"
+    "react-intl": "^6.6.2",
+    "tslib": "^2.3.0",
+    "typedoc": "^0.25.9",
+    "yup": "^1.3.3"
   },
   "devDependencies": {
     "@nx/cypress": "17.2.8",
