@@ -1,11 +1,13 @@
 import { Box, Typography } from "@mui/material";
-import React, { ReactNode } from "react";
+import React from "react";
 
 interface ButtonsProps {
-  label: ReactNode;
+  label: string;
+  isPrimary: boolean;
+
 }
 
-const PrimaryButton: React.FC<ButtonsProps> = ({ label }) => {
+const PrimaryButton: React.FC<ButtonsProps> = ({ label, isPrimary }) => {
   return (
     <Box
       sx={{
@@ -15,12 +17,13 @@ const PrimaryButton: React.FC<ButtonsProps> = ({ label }) => {
         alignItems: "center",
         gap: "10px",
         borderRadius: "50px",
-        background: "var(--Primary, #A50000)",
+        background: isPrimary ? "var(--Primary, #A50000)" : "var(--bachground, #F5F5F5)",
+        // borderRadius:isRounded? '50px' : ''
       }}
     >
       <Typography
         sx={{
-          color: "var(--off-white, #FFF)",
+          color: isPrimary ? "var(--off-white, #FFF)" : "var(--Titre-active, #333)",
           fontFamily: "Montserrat, sans-serif",
           fontSize: "18px",
           cursor: "pointer",

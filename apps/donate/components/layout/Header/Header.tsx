@@ -2,7 +2,7 @@ import { Box, ImageListItem, Toolbar, Typography  } from '@mui/material';
 import LayoutMenu from 'apps/donate/Interface';
 import React, { useState } from 'react';
 import LogoLHA from '../../../assets/LogoLha.png';
-import PrimaryButton from '../Buttons/PrimaryButton';
+import ButtonFilled from '../Buttons/ButtonFilled';
 import Image from 'next/image';
 // import CaretIcon from "@iconify-icons/fluent/chevron-down-24-regular";
 
@@ -118,7 +118,7 @@ export default function Header() {
             </Typography>
             {/* <Icon icon={CaretIcon} color="#2F3A45" /> */}
           </Box>
-          <PrimaryButton label = "Faire un don"></PrimaryButton>
+          <ButtonFilled label="Faire un don" isPrimary={true} ></ButtonFilled>
         </Box>
       </Toolbar>
     </Box>
