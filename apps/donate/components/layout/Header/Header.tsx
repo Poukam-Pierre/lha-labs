@@ -4,9 +4,13 @@ import React, { useState } from 'react';
 import LogoLHA from '../../../assets/LogoLha.png';
 import ButtonFilled from '../Buttons/ButtonFilled';
 import Image from 'next/image';
+import { useIntl } from 'react-intl';
+
 // import CaretIcon from "@iconify-icons/fluent/chevron-down-24-regular";
 
 export default function Header() {
+  const { formatMessage } = useIntl();
+
   const [activeItem, setActiveItem] = useState(0);
 
   const items: LayoutMenu[] = [
@@ -86,7 +90,7 @@ export default function Header() {
                 borderBottom: activeItem === index ? '2px solid red' : 'none',
               }}
             >
-              {title}
+              {formatMessage({ id: `${title}` })}
             </Box>
           ))}
         </Box>
@@ -118,11 +122,11 @@ export default function Header() {
                 textTransform: 'capitalize',
               }}
             >
-              Eng
+              {formatMessage({ id: 'Eng' })}
             </Typography>
             {/* <Icon icon={CaretIcon} color="#2F3A45" /> */}
           </Box>
-          <ButtonFilled label="Faire un don" isPrimary={true}></ButtonFilled>
+          <ButtonFilled label={formatMessage({ id: "Make a donation"})} isPrimary={true}></ButtonFilled>
         </Box>
       </Toolbar>
     </Box>

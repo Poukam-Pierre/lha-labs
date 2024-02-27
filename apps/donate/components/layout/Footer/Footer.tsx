@@ -14,7 +14,7 @@ export default function Footer() {
   const listOrganisation = [
     'About Us',
     'Partners',
-    'Faire un don anonyme',
+    'Make an anonymous donation',
     'let’shelp@gmail.com',
   ];
 
@@ -84,8 +84,9 @@ export default function Footer() {
               lineHeight: '28px',
             }}
           >
-            Lets Help Association, devoted to compassion and social impact, is
-            committed to providing meaningful assistance to communities.
+            {formatMessage({
+              id: 'Lets Help Association, devoted to compassion and social impact, is committed to providing meaningful assistance to communities.',
+            })}
           </Typography>
           <Box
             sx={{
@@ -95,8 +96,8 @@ export default function Footer() {
               gap: '16px',
             }}
           >
-            <ButtonFilled label="Faire un don" isPrimary={true}></ButtonFilled>
-            <ButtonFilled label="Nous joindre" isPrimary={false}></ButtonFilled>
+            <ButtonFilled label={formatMessage({ id: "Make a donation"})} isPrimary={true}></ButtonFilled>
+            <ButtonFilled label={formatMessage({ id: "Nous joindre"})} isPrimary={false}></ButtonFilled>
           </Box>
         </Box>
 
@@ -119,7 +120,7 @@ export default function Footer() {
               letterSpacing: '-0.42px',
             }}
           >
-            Get in touch
+            {formatMessage({ id: 'Get in touch' })}
           </Typography>
           <Box sx={{ display: 'flex' }}>
             {socialMediaLinks.map((item, index) => (
@@ -179,7 +180,7 @@ export default function Footer() {
               letterSpacing: '-0.42px',
             }}
           >
-            Organisation
+            {formatMessage({ id: 'Organisation' })}
           </Typography>
           {listOrganisation.map((title, index) => (
             <Typography
@@ -193,7 +194,7 @@ export default function Footer() {
                 lineHeight: '28px',
               }}
             >
-              {title}
+              {formatMessage({ id: `${title}` })}
             </Typography>
           ))}
         </Box>
