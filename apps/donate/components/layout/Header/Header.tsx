@@ -1,4 +1,4 @@
-import { Box, ImageListItem, Toolbar, Typography  } from '@mui/material';
+import { Box, ImageListItem, Toolbar, Typography } from '@mui/material';
 import LayoutMenu from 'apps/donate/Interface';
 import React, { useState } from 'react';
 import LogoLHA from '../../../assets/LogoLha.png';
@@ -11,19 +11,19 @@ export default function Header() {
 
   const items: LayoutMenu[] = [
     {
-      title: "Home",
+      title: 'Home',
       active: true,
     },
     {
-      title: "About Us",
+      title: 'About Us',
       active: false,
     },
     {
-      title: "Partners",
+      title: 'Partners',
       active: false,
     },
     {
-      title: "Donate",
+      title: 'Donate',
       active: false,
     },
   ];
@@ -35,32 +35,36 @@ export default function Header() {
   return (
     <Box
       sx={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        backgroundColor: "var(--background, #F5F5F5)",
-        padding: "24px 94px",
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        backgroundColor: 'var(--background, #F5F5F5)',
+        padding: '24px 94px',
       }}
     >
       <Toolbar
         sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          width: "100%",
-          paddingRight: "0px",
-          paddingLeft: "0px",
+          display: 'flex',
+          justifyContent: 'space-between',
+          width: '100%',
+          paddingRight: '0px',
+          paddingLeft: '0px',
         }}
       >
-        <Box sx={{ display: "flex", alignItems: "center"}}>
-        <ImageListItem sx={{ width: '167px', height: '63px'}}>
-          <Image  src={LogoLHA} alt="Logo LHA" style={{width: '167px', height: '63px'}}/>
-        </ImageListItem>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <ImageListItem sx={{ width: '167px', height: '63px' }}>
+            <Image
+              src={LogoLHA}
+              alt="Logo LHA"
+              style={{ width: '167px', height: '63px' }}
+            />
+          </ImageListItem>
         </Box>
         <Box
           sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: "24px",
+            display: 'flex',
+            alignItems: 'center',
+            gap: '24px',
           }}
         >
           {items.map(({ title, active }, index) => (
@@ -68,18 +72,18 @@ export default function Header() {
               onClick={() => itemClick(index)}
               key={index}
               sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                color: "var(--Body, #2F3A45)",
-                fontFamily: "Montserrat, sans-serif",
-                fontSize: "12px",
-                fontStyle: "normal",
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                color: 'var(--Body, #2F3A45)',
+                fontFamily: 'Montserrat, sans-serif',
+                fontSize: '12px',
+                fontStyle: 'normal',
                 fontWeight: 500,
-                cursor: "pointer",
-                lineHeight: "16px",
-                paddingBottom: "8px",
-                borderBottom: activeItem === index ? "2px solid red" : "none",
+                cursor: 'pointer',
+                lineHeight: '16px',
+                paddingBottom: '8px',
+                borderBottom: activeItem === index ? '2px solid red' : 'none',
               }}
             >
               {title}
@@ -89,39 +93,38 @@ export default function Header() {
 
         <Box
           sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "12px",
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '12px',
           }}
         >
           <Box
             sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: "4px",
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: '4px',
             }}
           >
             <Typography
               sx={{
-                color: "var(--Body, #2F3A45)",
-                fontFamily: "Montserrat, sans-serif",
+                color: 'var(--Body, #2F3A45)',
+                fontFamily: 'Montserrat, sans-serif',
                 fontSize: 12,
-                fontStyle: "normal",
+                fontStyle: 'normal',
                 fontWeight: 600,
-                lineHeight: "20px",
-                textTransform: "capitalize",
+                lineHeight: '20px',
+                textTransform: 'capitalize',
               }}
             >
               Eng
             </Typography>
             {/* <Icon icon={CaretIcon} color="#2F3A45" /> */}
           </Box>
-          <ButtonFilled label="Faire un don" isPrimary={true} ></ButtonFilled>
+          <ButtonFilled label="Faire un don" isPrimary={true}></ButtonFilled>
         </Box>
       </Toolbar>
     </Box>
-  )
+  );
 }
-
