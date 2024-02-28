@@ -1,17 +1,27 @@
-import { Box, ImageListItem, Toolbar, Typography } from '@mui/material';
+import CaretIcon from '@iconify-icons/fluent/chevron-down-24-regular';
+import MenuIcon from '@iconify-icons/fluent/line-horizontal-3-20-regular';
+import { Icon } from '@iconify/react';
+import {
+  Box,
+  IconButton,
+  ImageListItem,
+  Toolbar,
+  Typography,
+} from '@mui/material';
 import LayoutMenu from 'apps/donate/Interface';
-import React, { useState } from 'react';
+import Image from 'next/image';
+import { useState } from 'react';
+import { useIntl } from 'react-intl';
 import LogoLHA from '../../../assets/LogoLha.png';
 import ButtonFilled from '../Buttons/ButtonFilled';
-import Image from 'next/image';
-import { useIntl } from 'react-intl';
-
-// import CaretIcon from "@iconify-icons/fluent/chevron-down-24-regular";
+import Sidebar from '../SideBar/SideBar';
 
 export default function Header() {
   const { formatMessage } = useIntl();
 
   const [activeItem, setActiveItem] = useState(0);
+
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const items: LayoutMenu[] = [
     {
@@ -34,6 +44,15 @@ export default function Header() {
 
   const itemClick = (index: number) => {
     setActiveItem(index);
+    closeSidebar();
+  };
+
+  const openSidebar = () => {
+    setSidebarOpen(true);
+  };
+
+  const closeSidebar = () => {
+    setSidebarOpen(false);
   };
 
   return (
@@ -64,6 +83,21 @@ export default function Header() {
             />
           </ImageListItem>
         </Box>
+        {/* side BAr */}
+        <IconButton
+          sx={{ display: { sm: 'none', md: 'block' } }}
+          onClick={openSidebar}
+        >
+          <Icon icon={MenuIcon} color="#2F3A45" />
+        </IconButton>
+
+        <Sidebar
+          open={sidebarOpen}
+          onClose={closeSidebar}
+          items={items}
+          activeItem={activeItem}
+          onItemClick={itemClick}
+        />
         <Box
           sx={{
             display: 'flex',
@@ -119,14 +153,16 @@ export default function Header() {
                 fontStyle: 'normal',
                 fontWeight: 600,
                 lineHeight: '20px',
-                textTransform: 'capitalize',
               }}
             >
               {formatMessage({ id: 'Eng' })}
             </Typography>
-            {/* <Icon icon={CaretIcon} color="#2F3A45" /> */}
+            <Icon icon={CaretIcon} color="#2F3A45" />
           </Box>
-          <ButtonFilled label={formatMessage({ id: "Make a donation"})} isPrimary={true}></ButtonFilled>
+          <ButtonFilled
+            label={formatMessage({ id: 'Make a donation' })}
+            isPrimary={true}
+          ></ButtonFilled>
         </Box>
       </Toolbar>
     </Box>
