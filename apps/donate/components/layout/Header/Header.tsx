@@ -8,10 +8,10 @@ import {
   Toolbar,
   Typography,
 } from '@mui/material';
-import LayoutMenu from '../../../Interface';
 import Image from 'next/image';
 import { useState } from 'react';
 import { useIntl } from 'react-intl';
+import LayoutMenu from '../../../Interface';
 import LogoLHA from '../../../assets/LogoLha.png';
 import ButtonFilled from '../Buttons/ButtonFilled';
 import Sidebar from '../SideBar/SideBar';
@@ -83,21 +83,7 @@ export default function Header() {
             />
           </ImageListItem>
         </Box>
-        {/* side BAr */}
-        <IconButton
-          sx={{ display: { sm: 'none', md: 'block' } }}
-          onClick={openSidebar}
-        >
-          <Icon icon={MenuIcon} color="#2F3A45" />
-        </IconButton>
 
-        <Sidebar
-          open={sidebarOpen}
-          onClose={closeSidebar}
-          items={items}
-          activeItem={activeItem}
-          onItemClick={itemClick}
-        />
         <Box
           sx={{
             display: 'flex',
@@ -164,6 +150,21 @@ export default function Header() {
             isPrimary={true}
           ></ButtonFilled>
         </Box>
+        {/* side BAr */}
+        <IconButton
+          sx={{ display: { sm: 'none', md: 'block' } }}
+          onClick={openSidebar}
+        >
+          <Icon icon={MenuIcon} color="#2F3A45" />
+        </IconButton>
+
+        <Sidebar
+          open={sidebarOpen}
+          onClose={closeSidebar}
+          items={items}
+          activeItem={activeItem}
+          onItemClick={itemClick}
+        />
       </Toolbar>
     </Box>
   );

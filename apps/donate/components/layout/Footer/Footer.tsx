@@ -96,8 +96,14 @@ export default function Footer() {
               gap: '16px',
             }}
           >
-            <ButtonFilled label={formatMessage({ id: "Make a donation"})} isPrimary={true}></ButtonFilled>
-            <ButtonFilled label={formatMessage({ id: "Nous joindre"})} isPrimary={false}></ButtonFilled>
+            <ButtonFilled
+              label={formatMessage({ id: 'Make a donation' })}
+              isPrimary={true}
+            ></ButtonFilled>
+            <ButtonFilled
+              label={formatMessage({ id: 'Nous joindre' })}
+              isPrimary={false}
+            ></ButtonFilled>
           </Box>
         </Box>
 
@@ -143,7 +149,9 @@ export default function Footer() {
                     alignItems: 'center',
                   }}
                 >
-                  <IconButton color="error">{item.icon}</IconButton>
+                  <IconButton style={{ color: '#A50000' }}>
+                    {item.icon}
+                  </IconButton>
                 </Box>
               </a>
             ))}
