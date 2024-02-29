@@ -34,7 +34,7 @@ export default function Footer() {
   return (
     <Box
       sx={{
-        position: 'fixed',
+        // position: 'fixed',
         bottom: 0,
         width: '100%',
         alignItems: 'center',
