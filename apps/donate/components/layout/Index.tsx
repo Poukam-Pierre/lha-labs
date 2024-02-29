@@ -1,6 +1,7 @@
 import { Box } from '@mui/material';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
+import AboutUs from '../../pages/AboutUs/AboutUs';
 
 export default function DonateLayout({ children }: { children: JSX.Element }) {
   /* TODO: this function will receive
@@ -17,7 +18,8 @@ export default function DonateLayout({ children }: { children: JSX.Element }) {
       }}
     >
       <Header />
-      {children}
+      <AboutUs />
+      {/* {children} */}
       <Footer />
     </Box>
   );

@@ -8,7 +8,7 @@ import {
   Toolbar,
   Typography,
 } from '@mui/material';
-import LayoutMenu from 'apps/donate/Interface';
+import LayoutMenu from '../../../Interface';
 import Image from 'next/image';
 import { useState } from 'react';
 import { useIntl } from 'react-intl';
